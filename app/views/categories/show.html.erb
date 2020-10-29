@@ -1,19 +1,57 @@
-<h1><%= @category.name %></h1>
 
-<h2>Posts</h2>
 
-<ul>
+<ul class="posts">
   <% @posts.each do |post| %>
-    <li>
-      <%= image_tag(post.image) %>
-    </li>
-    <li>
-      <span><%= post.title %></span>
-      <span><%= post.description %></span>
-      <% if post.goal %>
-      <span><%= post.goal %></span>
+
+    <li class="post">
+      <% if revert < 3 %>
+        <div class="image">
+          <%= image_tag(post.image, class: 'category-img')%>
+        </div>
+        <div class="content">
+          <div class="title">
+              <span><%= post.title %></span>
+          </div>
+
+          <div class="description">
+            <span><%= post.description %></span>
+          </div>
+          <% if post.goal %>
+          <div class="goal">
+            <span><%= post.goal %></span>
+          </div>
+          <% end %>
+          <div class="user">
+            <span><%= post.user.name %></span>
+          </div>
+
+        </div>
+        <% else %>
+        <div class="content">
+          <div class="title">
+              <span><%= post.title %></span>
+          </div>
+
+          <div class="description">
+            <span><%= post.description %></span>
+          </div>
+          <% if post.goal %>
+          <div class="goal">
+            <span><%= post.goal %></span>
+          </div>
+          <% end %>
+          <div class="user">
+            <span><%= post.user.name %></span>
+          </div>
+
+        </div>
+
+        <div class="image">
+          <%= image_tag(post.image, class: 'category-img')%>
+        </div>
+
       <% end %>
-      <span><%= post.user.name %></span>
+
     </li>
   <% end %>
 </ul>
