@@ -1,0 +1,14 @@
+<div class="main-grid">
+  <%= link_to category_path(@principal) do %>
+  <div class="first-row">
+    <%= @principal.name %>
+  </div>
+  <% end %>
+  <div class="second-row">
+    <% @categories.each do |category| %>
+      <div class="category">
+        <%= category.name %>
+      </div>
+    <% end %>
+  </div>
+</div>

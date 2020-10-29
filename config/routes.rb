@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :categories, only: [:index, :destroy] do
+  resources :categories, only: [:index, :show, :destroy] do
     resources :posts, only: [:new, :create, :index, :destroy] do
       resources :paws, only: [:create]
       resources :votes, only: [:create]
