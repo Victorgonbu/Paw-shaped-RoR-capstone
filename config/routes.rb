@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, only: [:new, :create, :index, :destroy]
+  resources :categories, only: [:index, :destroy] do
+    resources :posts, only: [:new, :create, :index, :destroy] do
+      resources :paws, only: [:create]
+      resources :votes, only: [:create]
+    end
+  end
+
+  root 'categories#index'
 end
