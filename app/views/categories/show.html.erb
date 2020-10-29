@@ -1,0 +1,19 @@
+<h1><%= @category.name %></h1>
+
+<h2>Posts</h2>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= image_tag(post.image) %>
+    </li>
+    <li>
+      <span><%= post.title %></span>
+      <span><%= post.description %></span>
+      <% if post.goal %>
+      <span><%= post.goal %></span>
+      <% end %>
+      <span><%= post.user.name %></span>
+    </li>
+  <% end %>
+</ul>

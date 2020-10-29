@@ -1,6 +1,10 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all.where.not(id: Category.first.id)
-    @principal = Category.first
+    @categories = Category.order(priority: :asc)
+
+  end
+  def show
+    @category = Category.find(params[:id])
+    @posts = Post.where(category_id: params[:id])
   end
 end

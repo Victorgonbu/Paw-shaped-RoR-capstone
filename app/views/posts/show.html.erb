@@ -1,0 +1,12 @@
+<h1><%= @post.category.name %></h1>
+<h2><%= @post.title %></h2>
+
+<%= image_tag(@post.image) %>
+
+<div class="description">
+  <%= @post.description %>
+</div>
+
+<div class="author">
+  <span>by: </span> <%= @post.user.name %>
+</div>

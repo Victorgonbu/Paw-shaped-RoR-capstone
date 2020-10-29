@@ -84,15 +84,15 @@ table {
   justify-content: space-between;
   padding: 0 2em;
   border: 1px solid red;
-  height: 5%
+  height: 8%
 }
 
 .main-grid {
   border: 1px solid green;
-  height: 95%;
+  height: 92%;
   .first-row {
     height: 75%;
-    border: 1px solid blueM
+    border: 1px solid blue;
   }
   .second-row {
     display: flex;
