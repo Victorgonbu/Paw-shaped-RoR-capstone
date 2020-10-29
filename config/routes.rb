@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create, :index, :destroy]
+
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :categories, only: [:index, :destroy] do
     resources :posts, only: [:new, :create, :index, :destroy] do
       resources :paws, only: [:create]
@@ -7,5 +10,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'categories#index'
+  root 'users#new'
 end

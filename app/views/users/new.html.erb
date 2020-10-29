@@ -1,0 +1,13 @@
+<h1>Sign up</h1>
+
+<%= form_with model: @user do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email  %>
+    <%= f.text_field :email %>
+  </div>
+  <%= f.submit 'Sign up' %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Log in</h1>
+
+<%= form_with(url: "/sessions", method: :post) do %>
+  <div class="field">
+    <%= label_tag(:name, 'Name') %>
+    <%= text_field_tag(:name) %>
+  </div>
+  <%= submit_tag("Log in") %>
+<% end %>
