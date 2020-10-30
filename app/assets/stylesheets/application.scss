@@ -76,7 +76,7 @@ table {
 
  body {
    height: 100vh;
-   border: 1px solid black;
+
  }
 
  .navbar-user {
@@ -124,13 +124,14 @@ table {
 .footer {
 	height: 6%;
 	border: 1px solid red;
-	background-color: green;
+
 }
 
 .posts {
 	min-height: 85.5%;
 	display: flex;
 	flex-wrap: wrap;
+	border: 5px solid gray;
 	.post {
 		border: 1px solid red;
 		display: flex;

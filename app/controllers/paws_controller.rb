@@ -1,16 +1,19 @@
 class PawsController < ApplicationController
   def create
-    @paw = Paw.new(paw_params)
-    if @paw.save
-      redirect_back(fallback_location: root_path, notice: 'Paw gifted')
-    else
-      redirect_back(fallback_location: root_path, alert: 'Not enough paws :(')
+    number = paw_params[:paws].to_i
+    number.times  do
+        Paw.create(user_id: paw_params[:user_id])
     end
+      redirect_back(fallback_location: root_path, notice: "#{paw_params[:paws]} paws purchased")
+  end
+
+  def update
+    
   end
 
   private
 
   def paw_params
-    params.permit(:user_id, :post_id)
+    params.permit(:user_id, :paws)
   end
 end

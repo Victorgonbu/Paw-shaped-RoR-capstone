@@ -21,6 +21,13 @@
       <%= link_to current_user.name, user_path(current_user) %>
     </div>
     <div class="user">
+      <%= current_user.paws.size %>
+      <span>Paws</span>
+    </div>
+    <div class="user">
+      <%= link_to 'Buy Paws', new_user_paw_path(current_user) %>
+    </div>
+    <div class="user">
       <%= link_to 'Sign out', session_path(current_user), method: :delete %>
     </div>
 
