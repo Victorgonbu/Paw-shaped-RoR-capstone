@@ -16,11 +16,23 @@ module CategoriesHelper
   end
 
   def paws(post)
-    link_to(user_paws_path(post_id: post.id, user_id: current_user.id), method: :patch) do
+    link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch) do
       content_tag(:i, ' Paw', class: "fas fa-paw")
     end
   end
 
   def votes(post)
+    @vote = post.votes.find_by(user_id: current_user.id)
+    if @vote
+
+      link_to(post_vote_path(id: @vote.id, post_id: post.id), method: :delete) do
+        content_tag(:i, ' Unvote', class: "fas fa-star")
+      end
+
+    else
+      link_to(post_votes_path(post_id: post.id, user_id: current_user.id), method: :post) do
+        content_tag(:i, ' Vote', class: "fas fa-star")
+      end
+    end
   end
 end
