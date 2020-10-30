@@ -4,52 +4,10 @@
   <% @posts.each do |post| %>
 
     <li class="post">
-      <% if revert < 3 %>
-        <div class="image">
-          <%= image_tag(post.image, class: 'category-img')%>
-        </div>
-        <div class="content">
-          <div class="title">
-              <span><%= post.title %></span>
-          </div>
-
-          <div class="description">
-            <span><%= post.description %></span>
-          </div>
-          <% if post.goal %>
-          <div class="goal">
-            <span><%= post.goal %></span>
-          </div>
-          <% end %>
-          <div class="user">
-            <span><%= post.user.name %></span>
-          </div>
-
-        </div>
+      <% if revert(@posts.size) < 4 %>
+        <%= render 'posts', post: post %>
         <% else %>
-        <div class="content">
-          <div class="title">
-              <span><%= post.title %></span>
-          </div>
-
-          <div class="description">
-            <span><%= post.description %></span>
-          </div>
-          <% if post.goal %>
-          <div class="goal">
-            <span><%= post.goal %></span>
-          </div>
-          <% end %>
-          <div class="user">
-            <span><%= post.user.name %></span>
-          </div>
-
-        </div>
-
-        <div class="image">
-          <%= image_tag(post.image, class: 'category-img')%>
-        </div>
-
+        <%= render 'inverted_posts', post: post %>
       <% end %>
 
     </li>

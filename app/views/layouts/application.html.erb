@@ -4,7 +4,7 @@
     <title>PawShapedRorCapstone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/ea4197418c.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,5 +13,6 @@
     <%= render 'layouts/flash' %>
     <%= render 'layouts/navbar/nav' %>
     <%= yield %>
+    <%= render 'layouts/footer/footer' %>
   </body>
 </html>

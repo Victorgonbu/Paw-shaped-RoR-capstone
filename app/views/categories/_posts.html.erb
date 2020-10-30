@@ -1,0 +1,39 @@
+<div class="image">
+  <%= image_tag(post.image, class: 'category-img')%>
+</div>
+<div class="content">
+  <div class="category">
+      <span><%= post.category.name %></span>
+  </div>
+  <div class="title">
+      <span><%= post.title %></span>
+  </div>
+
+  <div class="description">
+    <span><%= post.description %></span>
+  </div>
+  <div class="user">
+    <span>- </span>
+    <span><%= post.user.name %></span>
+  </div>
+  <% if post.goal %>
+  <div class="goal">
+    <div class="set-goal">
+      <span>Goal:</span>
+      <span><%= post.goal %></span>
+      <span> Paws</span>
+    </div>
+
+    <div class="votes-paws">
+      <%= paws(post) %>
+      <span><%= post.paws.size %></span>
+      <%= votes(post) %>
+    </div>
+  </div>
+
+  <% end %>
+
+
+
+
+</div>

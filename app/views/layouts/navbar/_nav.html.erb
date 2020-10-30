@@ -1,7 +1,7 @@
 <nav class="navbar">
 
   <div class="nav-brand">
-    <p>Paw shaped</p>
+    <p><%= link_to 'Paw Shaped', root_path %></p>
   </div>
 
   <div class="navbar-links">
@@ -12,12 +12,18 @@
 
 
   <div class="navbar-user">
+
+    <div class="user">
+      <%= link_to 'Create post', new_post_path %>
+    </div>
+
     <div class="user">
       <%= link_to current_user.name, user_path(current_user) %>
     </div>
-    <div class="">
+    <div class="user">
       <%= link_to 'Sign out', session_path(current_user), method: :delete %>
     </div>
+
   </div>
 
   <% else %>

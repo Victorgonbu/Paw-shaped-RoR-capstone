@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :paws, only: [:create]
     resources :votes, only: [:create]
   end
-  root 'users#new'
+  root 'categories#index'
 end
