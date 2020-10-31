@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_30_213920) do
+ActiveRecord::Schema.define(version: 2020_10_31_071206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_10_30_213920) do
   end
 
   create_table "paws", force: :cascade do |t|
-    t.integer "value"
+    t.integer "value", default: 10
     t.bigint "user_id", null: false
     t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false

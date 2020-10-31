@@ -201,3 +201,22 @@ table {
 		}
 	}
 }
+
+.form-wrap {
+	min-height: 85.5%;
+	border: 4px solid green;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.form-title {
+		padding: 2em 0;
+		font-size: 3em;
+	}
+	.paws {
+
+		.paw-option {
+			padding: 1em;
+			font-size: 1.5em;
+		}
+	}
+}
