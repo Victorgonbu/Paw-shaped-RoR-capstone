@@ -105,9 +105,15 @@ table {
 .main-grid {
   border: 1px solid green;
   height: 85.5%;
+	width: 100%;
   .first-row {
     height: 75%;
     border: 1px solid blue;
+		position: relative;
+		border: 4px solid blue;
+		.most-voted-title {
+			position: absolute;
+		}
   }
   .second-row {
     display: flex;
@@ -120,6 +126,12 @@ table {
 
   }
 }
+
+.category-img {
+	width: 100%;
+	height: 100%
+}
+
 
 .footer {
 	height: 6%;
@@ -142,10 +154,7 @@ table {
 			width: 50%;
 
 		}
-		.category-img {
-			width: 100%;
-			height: 100%
-		}
+
 		.content {
 			width: 50%;
 			padding: 1em;

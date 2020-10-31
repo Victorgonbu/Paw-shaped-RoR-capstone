@@ -1,7 +1,8 @@
 <div class="main-grid">
-  <%= link_to root_path do %>
+  <%= link_to post_path(@most_voted) do %>
   <div class="first-row">
-    PAKO ANTONIO'S POST
+    <h1 class="most-voted-title"><%= @most_voted.title %></h1>
+    <%= image_tag(@most_voted.image, class: 'category-img') %>
   </div>
   <% end %>
 
