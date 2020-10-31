@@ -111,16 +111,39 @@ table {
     border: 1px solid blue;
 		position: relative;
 		border: 4px solid blue;
-		.most-voted-title {
+		display: flex;
+		align-items: flex-end;
+
+		.most-voted-post {
 			position: absolute;
+			left: 1em;
+			bottom: 1em;
+			border: 4px solid red;
+			.most-voted-post-title {
+				font-size: 2em;
+			}
+			.most-voted-post-description {
+				padding-top: 1em;
+				font-size: 1.7em;
+			}
 		}
   }
   .second-row {
     display: flex;
     height: 25%;
+
     .category {
       flex: 1;
-      border: 1px solid red;
+			height: 100%;
+			position: relative;
+			border: 1px solid black;
+			.most-liked-in-category {
+				position: absolute;
+				padding: 1em;
+			}
+			.most-liked-in-category-title {
+				bottom: 1em;
+			}
     }
 
 

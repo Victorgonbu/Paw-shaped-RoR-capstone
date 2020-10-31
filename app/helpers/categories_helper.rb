@@ -15,6 +15,15 @@ module CategoriesHelper
 
   end
 
+  def most_liked_in_category(category)
+    post_array = category.votes.group(:post_id).count(:all).max_by { |key, value| value }
+    if post_array
+      post = Post.find(post_array[0])
+    elsif post = category.posts.first
+      post
+    end
+  end
+
   def paws(post)
     link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch) do
       content_tag(:i, ' Paw', class: "fas fa-paw")
