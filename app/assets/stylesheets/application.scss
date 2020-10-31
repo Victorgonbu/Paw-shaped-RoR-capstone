@@ -209,7 +209,8 @@ table {
 	flex-direction: column;
 	align-items: center;
 	.form-title {
-		padding: 2em 0;
+		padding-top: 2em;
+		padding-bottom: 1em;
 		font-size: 3em;
 	}
 	.paws {
@@ -218,5 +219,96 @@ table {
 			padding: 1em;
 			font-size: 1.5em;
 		}
+	}
+
+	form {
+		width: 80%;
+
+
+		.field {
+
+			margin: 1em 0;
+
+			.input {
+				border-radius: 5px;
+				width: 100%;
+				border: 1px solid gray;
+			}
+			.title {
+				font-size: 1.3em;
+
+				height: 2em;
+			}
+			.description {
+				font-size: 1.5em;
+				resize: none;
+				height: 10em;
+
+			}
+			.goal {
+				width: 2em;
+			}
+		}
+
+		.field-flex {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			.cut-width {
+				display: flex;
+				justify-content: flex-end;
+			}
+			.sub-field {
+				padding-left:1em;
+
+				white-space: nowrap;
+					.image {
+					  color: transparent;
+						width: 50%
+					}
+
+					.image::-webkit-file-upload-button {
+					  visibility: hidden;
+					}
+
+					.image::before {
+					  content: 'Select image file';
+					  display: inline-block;
+						 color: black;
+					  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+					  border: 1px solid #999;
+					  border-radius: 3px;
+					  padding: 5px 8px;
+					  outline: none;
+					  white-space: nowrap;
+					  -webkit-user-select: none;
+					  cursor: pointer;
+					  text-shadow: 1px 1px #fff;
+					  font-weight: 700;
+					  font-size: 10pt;
+
+					}
+					.image:hover::before {
+					  border-color: black;
+					}
+					.image:active::before {
+					  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+					}
+					.input-field {
+						padding: 5px 8px;
+						border-radius: 5px;
+					}
+			}
+			.submit {
+				display: flex;
+				justify-content: flex-end;
+				.submit-input {
+					padding: 5px 8px;
+					font-size: 1.2em;
+				}
+			}
+		}
+
+
 	}
 }
