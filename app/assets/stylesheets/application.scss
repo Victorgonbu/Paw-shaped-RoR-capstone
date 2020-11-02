@@ -167,11 +167,12 @@ table {
 	display: flex;
 	flex-wrap: wrap;
 	border: 5px solid gray;
+	align-content: flex-start;
 	.post {
 		border: 1px solid red;
 		display: flex;
 		width: calc(100%/3);
-		height: 300px;
+		height: calc(85.5vh/3);
 		.image {
 			border: 1px solid black;
 			width: 50%;
@@ -197,6 +198,16 @@ table {
 				padding-top: 1em;
 				display: flex;
 				justify-content: space-between;
+			}
+
+			.votes-paws {
+				display: flex;
+				.paws, .votes {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					padding: 0 10px;
+				}
 			}
 		}
 	}
@@ -310,5 +321,17 @@ table {
 		}
 
 
+	}
+}
+
+@media (max-width: 1400px) {
+	.posts {
+
+		.post {
+
+			width: calc(100%/2);
+			height: calc(85.5vh/2);
+
+		}
 	}
 }

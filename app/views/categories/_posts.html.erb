@@ -21,14 +21,21 @@
     <div class="set-goal">
       <span>Goal:</span>
       <span><%= post.goal %></span>
-      <span> Paws</span>
+      <span> Paws left</span>
     </div>
 
     <div class="votes-paws">
-      <%= paws(post) %>
-      <span><%= post.paws.size %></span>
-      <%= votes(post) %>
-      <span><%= post.votes.size %></span>
+      <div class="paws">
+
+        <span><%= post.paws.size %></span>
+        <%= paws(post) %>
+      </div>
+      <div class="votes">
+        <span><%= post.votes.size %></span>
+        <%= votes(post) %>
+
+      </div>
+
     </div>
   </div>
 
