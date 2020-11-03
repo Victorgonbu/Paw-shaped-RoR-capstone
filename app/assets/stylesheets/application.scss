@@ -85,18 +85,39 @@ table {
 
  }
 
+ .active {
+	 background-color: red;
+ }
+
  .navbar-user {
 	 display: flex;
 
 	 .user {
-		 border: 1px solid black;
-		 margin: 0 .5em;
+		 text-transform: uppercase;
 		 display: flex;
 		 align-items: center;
-		 a {
-			 border: 1px solid green;
-			 padding: .5em;
+		 .coin-paw {
+			 text-align: baseline;
+			 line-height: 0;
 		 }
+		 .coin-paw {
+
+			 padding-left: 3px;
+			 color: var(--main-color);
+		 }
+		 .brown-border {
+
+			 border-right: 2px solid var(--main-brown);
+		 }
+	 }
+
+
+
+	 .user-nav-link {
+		 text-decoration: none;
+		 color: var(--main-brown);
+		 padding: 0 .5em;
+
 	 }
  }
 
@@ -106,31 +127,50 @@ table {
   padding: 0 1em;
   border: 1px solid red;
   height: 8%;
-	.nav-brand {
-		border: 1px solid black;
+
+	.links {
+		color: var(--main-brown);
+		text-decoration: none;
+
+	}
+
+
+	.navbar-links {
+		width: 40%;
 		display: flex;
 		align-items: center;
-		font-size: 2em;
-		position: relative;
-		.root-logo {
-			text-decoration: none;
-			color: var(--main-brown);
-			font-weight: 700;
-			position: relative;
-			z-index: 2;
-		}
-		.main-logo-img {
-			position: absolute;
-			color: #ccbcb2;
-			transform: rotate(-30deg);
-			left: 0;
-			right: 0;
-			margin-left: auto;
-			margin-right: auto;
-			width: 50px;
-			font-size: 3em;
+		justify-content: space-between;
+		color: var(--main-brown);
+		text-transform: uppercase;
+	}
+}
 
-		}
+.brand {
+	display: flex;
+	align-items: center;
+	font-size: 2em;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid black;
+	.root-logo {
+		text-decoration: none;
+		color: var(--main-brown);
+		font-weight: 700;
+		position: relative;
+		z-index: 2;
+	}
+	.main-logo-img {
+		position: absolute;
+		color: #ccbcb2;
+		transform: rotate(-30deg);
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50px;
+		font-size: 3em;
+
+
 	}
 }
 
@@ -191,6 +231,16 @@ table {
 .footer {
 	height: 6%;
 	border: 1px solid red;
+	display: flex;
+	justify-content: space-between;
+
+	.footer-brand {
+	width: fit-content;
+	height: 100%;
+	}
+	.footer-div {
+		border: 1px solid black;
+	}
 
 }
 
