@@ -1,9 +1,11 @@
-<h1>Log in</h1>
+<div class="form-wrap">
+  <h1 class="form-title">Log in</h1>
 
-<%= form_with(url: "/sessions", method: :post) do %>
-  <div class="field">
-    <%= label_tag(:name, 'Name') %>
-    <%= text_field_tag(:name) %>
-  </div>
-  <%= submit_tag("Log in") %>
-<% end %>
+  <%= form_with(url: "/sessions", method: :post, class: 'form') do %>
+    <div class="field form-field">
+      <%= label_tag(:name, 'Name') %>
+      <%= text_field_tag(:name, nil, class: 'form-input') %>
+    </div>
+    <%= submit_tag("Log in", class: 'form-submit') %>
+  <% end %>
+</div>

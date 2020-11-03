@@ -21,7 +21,7 @@
     </div>
 
     <div class="user">
-      <%= link_to current_user.name, user_path(current_user), class: 'user-nav-link' %>
+      <a href="#" class="user-nav-link"><%= current_user.name %></a>
     </div>
     <div class="user">
       <span ><%= current_user.paws.size %></span>

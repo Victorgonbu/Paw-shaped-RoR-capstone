@@ -8,7 +8,12 @@
     </div>
 
     <%= image_tag(@most_voted.image, class: 'category-img') %>
-  </div>
+
+    <div class="shade">
+
+    </div>
+
+    </div>
   <% end %>
   <% end %>
 
@@ -24,6 +29,10 @@
             <%= post.title %>
         </div>
           <%= image_tag(post.image, class: 'category-img') %>
+          <div class="shade">
+
+          </div>
+
         <% end %>
 
       </div>
