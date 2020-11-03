@@ -1,7 +1,7 @@
 
 <div class="content">
   <div class="category">
-      <span><%= post.category.name %></span>
+      <span class="category-name"><%= post.category.name %></span>
   </div>
   <div class="title">
       <span><%= post.title %></span>
@@ -12,12 +12,14 @@
   </div>
   <div class="user">
     <span>- </span>
-    <span><%= post.user.name %></span>
+    <span class="user-name"><%= post.user.name %></span>
   </div>
   <% if post.goal && post.goal > 0 %>
   <div class="goal">
     <div class="set-goal">
-      <span>Goal:</span>
+      <div class="">
+        <span>Goal:</span>
+      </div>
 
         <span><%= post.goal %></span>
         <span> Paws left</span>
@@ -29,11 +31,13 @@
       <div class="paws">
 
         <span><%= post.paws.size %></span>
-        <%= paws(post) %>
+        <span ><%= paws(post) %></span>
+
       </div>
       <div class="votes">
         <span><%= post.votes.size %></span>
-        <%= votes(post) %>
+        <span><%= votes(post) %></span>
+
 
       </div>
 
@@ -51,7 +55,8 @@
 
     <div class="votes">
       <span><%= post.votes.size %></span>
-      <%= votes(post) %>
+      <span><%= votes(post) %></span>
+
 
     </div>
 

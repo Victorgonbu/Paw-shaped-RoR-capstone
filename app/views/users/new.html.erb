@@ -1,13 +1,16 @@
-<h1>Sign up</h1>
+<div class="form-wrap">
+  <h1 class="form-title">Sign up</h1>
 
-<%= form_with model: @user do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email  %>
-    <%= f.text_field :email %>
-  </div>
-  <%= f.submit 'Sign up' %>
-<% end %>
+  <%= form_with model: @user, class: 'form' do |f| %>
+    <div class="field form-field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-input'%>
+    </div>
+    <div class="field form-field">
+      <%= f.label :email  %>
+      <%= f.text_field :email, class: 'form-input' %>
+    </div>
+    <%= f.submit 'Sign up', class: 'form-submit' %>
+  <% end %>
+
+</div>

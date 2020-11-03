@@ -176,24 +176,28 @@ table {
 
   height: 86%;
 	width: 100%;
+	background-color: var(--main-brown);
   .first-row {
     height: 75%;
 		position: relative;
-		border: 4px solid blue;
 		display: flex;
 		align-items: flex-end;
+
 
 		.most-voted-post {
 			position: absolute;
 			left: 1em;
 			bottom: 1em;
-			border: 4px solid red;
+
 			.most-voted-post-title {
 				font-size: 2em;
+				color: var(--main-color);
+
 			}
 			.most-voted-post-description {
-				padding-top: 1em;
+				padding-top: .5em;
 				font-size: 1.7em;
+				color: var(--white-color);
 			}
 		}
   }
@@ -208,6 +212,14 @@ table {
 			.most-liked-in-category {
 				position: absolute;
 				padding: 1em;
+				color: var(--white-color);
+				font-size: 1.3em;
+			}
+			.category-name {
+				border-bottom: 2px solid yellow;
+				padding: 0;
+				padding-bottom: 2px;
+				margin: 1em;
 			}
 			.most-liked-in-category-title {
 				bottom: 1em;
@@ -277,7 +289,7 @@ table {
 	min-height: 85.5%;
 	display: flex;
 	flex-wrap: wrap;
-	border: 5px solid gray;
+	border: 7px solid var(--main-brown);
 	align-content: flex-start;
 	.post {
 		display: flex;
@@ -292,22 +304,36 @@ table {
 		.content {
 			width: 50%;
 			padding: 1em;
+			font-size: 1.3em;
 			.category {
 				padding-bottom: 1em;
+				.category-name {
+					border-bottom: 1px solid var(--main-color);
+					padding-bottom: 2px;
+					color: var(--main-color);
+
+				}
 			}
 
 			.title {
 				font-weight: 900;
+				color: var(--main-brown);
 			}
 
 			.description {
 				padding-top: 1em;
-				min-height: 50%;
+				min-height: 40%;
+				font-size: .8em;
 			}
 			.goal {
 				padding-top: 1em;
 				display: flex;
 				justify-content: space-between;
+				font-size: .8em;
+				white-space: nowrap;
+			}
+			.user-name {
+				font-size: .8em;
 			}
 
 			.votes-paws {
@@ -320,19 +346,32 @@ table {
 					align-items: center;
 					padding: 0 10px;
 				}
+				.paws {
+					.paw {
+						color: gray;
+					}
+				}
+				.votes {
+					.unvote {
+						color: var(--main-color);
+					}
+					.vote {
+						color: gray;
+					}
+				}
 			}
 		}
 	}
 }
 
 .form-wrap {
-	min-height: 85.5%;
+	min-height: 86%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: #FFE9D0;
 	.form-title {
-		padding-top: 2em;
-		padding-bottom: 1em;
+		padding: 1em 0;
 		font-size: 3em;
 	}
 	.paws {
@@ -343,6 +382,44 @@ table {
 		}
 	}
 
+	.form {
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 1.2em;
+		.form-field {
+			width: 25%;
+		}
+		.form-input {
+			display: block;
+			margin-top: 5px;
+			padding: 1em;
+			width: calc(100% - 2em);
+			border: 1px solid white;
+			border-radius: 10px;
+			transition: border 100ms;
+			&:focus {
+				border: 2px solid var(--main-color);
+			}
+		}
+
+		.form-submit {
+			padding: 1em 3em;
+			border-radius: 20px;
+			border: 1px solid white;
+			background-color: white;
+			color: var(--main-color);
+			font-weight: 600;
+			font-size: .8em;
+			transition: border ease-in 100ms;
+			margin: 1em 0;
+			&:hover {
+				border: 1px solid var(--main-color);
+			}
+		}
+	}
+
 	form {
 		width: 80%;
 
@@ -350,6 +427,7 @@ table {
 		.field {
 
 			margin: 1em 0;
+
 
 			.input {
 				border-radius: 5px;
@@ -426,7 +504,12 @@ table {
 				justify-content: flex-end;
 				.submit-input {
 					padding: 5px 8px;
+					font-weight: 600;
 					font-size: 1.2em;
+					background-color: var(--main-color);
+					border: 1px solid var(--main-color);
+					border-radius: 5px;
+					color: var(--white-color);
 				}
 			}
 		}
@@ -440,8 +523,7 @@ table {
 
 		.post {
 
-			width: calc(100%/2);
-			height: calc(85.5vh/2);
+		font-size: .75em;
 
 		}
 	}

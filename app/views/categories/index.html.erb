@@ -1,4 +1,5 @@
 <div class="main-grid">
+  <% if @most_voted %>
   <%= link_to post_path(@most_voted) do %>
   <div class="first-row">
     <div class="most-voted-post">
@@ -9,12 +10,13 @@
     <%= image_tag(@most_voted.image, class: 'category-img') %>
   </div>
   <% end %>
+  <% end %>
 
   <div class="second-row">
     <% @categories.each do |category| %>
       <%= link_to category_path(category), class: 'category' do%>
       <div class="category">
-        <div class="most-liked-in-category">
+        <div class="most-liked-in-category category-name">
           <%= category.name %>
         </div>
         <%  if post = most_liked_in_category(category) %>
