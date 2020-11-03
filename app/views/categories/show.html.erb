@@ -5,9 +5,11 @@
 
     <li class="post">
       <% if revert(@posts.size) < 4 %>
-        <%= render 'posts', post: post %>
+        <%= render 'post-image', post: post %>
+        <%= render 'post-body', post: post %>
         <% else %>
-        <%= render 'inverted_posts', post: post %>
+        <%= render 'post-body', post: post %>
+        <%= render 'post-image', post: post %>
       <% end %>
 
     </li>

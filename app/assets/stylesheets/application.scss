@@ -19,6 +19,12 @@
 
 /* CSS RESET */
 
+:root {
+	--main-color:#FD6000;
+	--main-brown:#50443e;
+	--white-color:#F2F3F6;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -99,7 +105,33 @@ table {
   justify-content: space-between;
   padding: 0 1em;
   border: 1px solid red;
-  height: 8%
+  height: 8%;
+	.nav-brand {
+		border: 1px solid black;
+		display: flex;
+		align-items: center;
+		font-size: 2em;
+		position: relative;
+		.root-logo {
+			text-decoration: none;
+			color: var(--main-brown);
+			font-weight: 700;
+			position: relative;
+			z-index: 2;
+		}
+		.main-logo-img {
+			position: absolute;
+			color: #ccbcb2;
+			transform: rotate(-30deg);
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50px;
+			font-size: 3em;
+
+		}
+	}
 }
 
 .main-grid {
@@ -202,6 +234,8 @@ table {
 
 			.votes-paws {
 				display: flex;
+				justify-content: space-between;
+				align-items: center;
 				.paws, .votes {
 					display: flex;
 					flex-direction: column;

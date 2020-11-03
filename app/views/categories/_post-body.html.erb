@@ -14,7 +14,7 @@
     <span>- </span>
     <span><%= post.user.name %></span>
   </div>
-  <% if post.goal %>
+  <% if post.goal && post.goal > 0 %>
   <div class="goal">
     <div class="set-goal">
       <span>Goal:</span>
@@ -40,11 +40,26 @@
     </div>
 
   </div>
+
+  <% else %>
+<div class="goal">
+  <div class="votes-paws">
+
+    <% if post.paws.any? %>
+      <p><%= post.paws.size %> Paws were donated</p>
+    <% end %>
+
+    <div class="votes">
+      <span><%= post.votes.size %></span>
+      <%= votes(post) %>
+
+    </div>
+
+  </div>
+</div>
+
+
   <% end %>
 
 
-</div>
-
-<div class="image">
-  <%= image_tag(post.image, class: 'category-img')%>
 </div>
