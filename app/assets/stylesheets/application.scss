@@ -125,7 +125,6 @@ table {
   display: flex;
   justify-content: space-between;
   padding: 0 1em;
-  border: 1px solid red;
   height: 8%;
 
 	.links {
@@ -151,7 +150,6 @@ table {
 	font-size: 2em;
 	position: relative;
 	overflow: hidden;
-	border: 1px solid black;
 	.root-logo {
 		text-decoration: none;
 		color: var(--main-brown);
@@ -175,12 +173,11 @@ table {
 }
 
 .main-grid {
-  border: 1px solid green;
-  height: 85.5%;
+
+  height: 86%;
 	width: 100%;
   .first-row {
     height: 75%;
-    border: 1px solid blue;
 		position: relative;
 		border: 4px solid blue;
 		display: flex;
@@ -208,7 +205,6 @@ table {
       flex: 1;
 			height: 100%;
 			position: relative;
-			border: 1px solid black;
 			.most-liked-in-category {
 				position: absolute;
 				padding: 1em;
@@ -230,16 +226,49 @@ table {
 
 .footer {
 	height: 6%;
-	border: 1px solid red;
 	display: flex;
 	justify-content: space-between;
-
+	padding: 0 2em;
+	background-color: var(--main-brown);
+	color: var(--white-color);
+	.privacy {
+		.privacy-link{
+			padding-right: .5em;
+			color: var(--main-color);
+			text-decoration: none;
+		}
+	}
 	.footer-brand {
 	width: fit-content;
 	height: 100%;
+	.root-logo {
+		color: var(--white-color);
+	}
+	.main-logo-img {
+		color: black;
+	}
 	}
 	.footer-div {
-		border: 1px solid black;
+		display: flex;
+		align-items: center;
+	}
+	.social-links {
+		.connect-with-us {
+			padding-right: 5px;
+			font-size: 1.2em;
+		}
+		i {
+			font-size: 1.5em;
+			border: 1px solid var(--main-color);
+			padding: 5px;
+			border-radius: 50%;
+			margin: 0 3px;
+			color: var(--main-brown);
+			background-color: var(--main-color);
+		}
+		.facebook {
+			padding: 5px 9px;
+		}
 	}
 
 }
@@ -251,12 +280,11 @@ table {
 	border: 5px solid gray;
 	align-content: flex-start;
 	.post {
-		border: 1px solid red;
 		display: flex;
 		width: calc(100%/3);
 		height: calc(85.5vh/3);
 		.image {
-			border: 1px solid black;
+
 			width: 50%;
 
 		}
@@ -299,7 +327,6 @@ table {
 
 .form-wrap {
 	min-height: 85.5%;
-	border: 4px solid green;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
