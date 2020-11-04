@@ -1,12 +1,50 @@
-<h1><%= @post.category.name %></h1>
-<h2><%= @post.title %></h2>
+<div class="post-show">
+  <div class="post-container">
+    <h1 class="post-category"><%= @post.category.name %></h1>
 
-<%= image_tag(@post.image, class: 'post-img') %>
 
-<div class="description">
-  <%= @post.description %>
-</div>
+    <%= image_tag(@post.image, class: 'post-img') %>
+    <h2 class="post-title padding-bottom"><%= @post.title %></h2>
+    <div class="post-description padding-bottom">
+      <%= @post.description %>
+    </div>
+    <% if @post.goal > 0 %>
+    <div class="post-goal padding-bottom">
+      <span>Goal: </span>
+      <%= @post.goal %>
+    </div>
+    <% end %>
+    <div class="post-author">
+      <div class="author">
+        <span>- </span> <%= @post.user.name %>
+      </div>
+      <div class="votes-paws">
 
-<div class="author">
-  <span>by: </span> <%= @post.user.name %>
+        <div class="votes">
+          <span><%= @post.votes.size %></span>
+          <span><%= votes(@post) %></span>
+        </div>
+
+        <div class="paws">
+          <% if @post.goal < 1 %>
+            <% if @post.paws.any? %>
+            <span class="orage-color"><%= @post.paws.size %></span>
+            <span class="orage-color">Paws were donated</span>
+            <span class="orage-color">($<%=@post.paws.size * 10%>)</span>
+            <% end %>
+          <% else %>
+              <span><%= @post.paws.size %></span>
+              <span><%= paws(@post)%></span>
+
+          <% end %>
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
 </div>

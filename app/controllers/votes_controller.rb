@@ -1,4 +1,6 @@
 class VotesController < ApplicationController
+  include ApplicationHelper
+  before_action :require_login
   def create
     @vote = Vote.new(vote_params)
     if @vote.save
@@ -15,6 +17,13 @@ class VotesController < ApplicationController
   end
 
   private
+
+    def require_login
+      unless current_user
+        redirect_back(fallback_location: root_path, alert: 'Must be logged in')
+      end
+    end
+
 
   def vote_params
     params.permit(:user_id, :post_id)

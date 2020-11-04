@@ -1,7 +1,14 @@
 <div class="form-wrap white-bg">
   <h1 class="form-title">Create a new post</h1>
 
-  <%= form_with model: @post do |p| %>
+  <%= form_with model: @post, local: true do |p| %>
+    <% if @post.errors %>
+      <div class="errors">
+        <% @post.errors.full_messages.each do |error| %>
+        <p class="error"><%= error %></p>
+        <% end %>
+      </div>
+    <% end %>
     <div class="field">
 
       <%= p.text_field :title, placeholder: 'Title', class: 'title input' %>

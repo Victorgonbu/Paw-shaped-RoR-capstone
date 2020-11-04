@@ -25,9 +25,9 @@ module CategoriesHelper
   end
 
   def paws(post)
-    
+
     link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch) do
-      content_tag(:i, ' Paw', class: "fas fa-paw paw")
+      content_tag(:i, '', class: "fas fa-paw paw")
     end
   end
 
@@ -36,12 +36,12 @@ module CategoriesHelper
     if @vote
 
       link_to(post_vote_path(id: @vote.id, post_id: post.id), method: :delete) do
-        content_tag(:i, ' Unvote', class: "fas fa-star unvote")
+        content_tag(:i, '', class: "fas fa-star unvote")
       end
 
     else
       link_to(post_votes_path(post_id: post.id, user_id: current_user.id), method: :post) do
-        content_tag(:i, ' Vote', class: "fas fa-star vote")
+        content_tag(:i, '', class: "fas fa-star vote")
       end
     end
   end

@@ -1,5 +1,6 @@
 class PawsController < ApplicationController
   include ApplicationHelper
+  before_action :require_login
   def create
     number = paw_params[:paws].to_i
     number.times  do
@@ -28,6 +29,12 @@ class PawsController < ApplicationController
   end
 
   private
+
+  def require_login
+    unless current_user
+      redirect_back(fallback_location: root_path, alert: 'Must be logged in')
+    end
+  end
 
   def paw_params
     params.permit(:user_id, :paws, :post_id)

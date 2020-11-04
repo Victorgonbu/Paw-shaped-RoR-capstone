@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
+  before_action :no_be_logged
   def new
     @user = User.new
   end
@@ -17,4 +19,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
+
+
+    def no_be_logged
+      if current_user
+        redirect_back(fallback_location: root_path, alert: 'Already logged in')
+      end
+    end
 end

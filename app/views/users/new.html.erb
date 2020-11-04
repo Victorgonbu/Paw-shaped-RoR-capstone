@@ -1,7 +1,15 @@
 <div class="form-wrap">
   <h1 class="form-title">Sign up</h1>
 
-  <%= form_with model: @user, class: 'form' do |f| %>
+  <%= form_with model: @user, class: 'form', local: true do |f| %>
+    <% if @user.errors %>
+    <div class="errors">
+      <% @user.errors.full_messages.each do |error| %>
+        <p class="error"><%= error %></p>
+      <% end %>
+    </div>
+
+    <% end %>
     <div class="field form-field">
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-input'%>

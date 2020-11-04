@@ -1,7 +1,7 @@
 <div class="form-wrap">
   <h1 class="form-title">Log in</h1>
 
-  <%= form_with(url: "/sessions", method: :post, class: 'form') do %>
+  <%= form_with(url: "/sessions", method: :post, class: 'form', local: true) do %>
     <div class="field form-field">
       <%= label_tag(:name, 'Name') %>
       <%= text_field_tag(:name, nil, class: 'form-input') %>

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include ApplicationHelper
+  before_action :no_be_logged, only: [:new, :create]
   def new
 
   end
@@ -18,4 +20,12 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path, notice: 'Logged out'
   end
+
+  private
+
+    def no_be_logged
+      if current_user
+        redirect_back(fallback_location: root_path, alert: 'Already logged in')
+      end
+    end
 end
