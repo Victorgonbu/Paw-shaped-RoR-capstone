@@ -1,7 +1,7 @@
 module PostsHelper
   def paw_post_status(post)
-    if post.goal < 1 && post.paws.any?
-      render '/posts/goal_completed', post: post
+    if post.goal < 1
+      render '/posts/goal_completed', post: post if post.paws.any?
     else
       render '/posts/goal_in_progress', post: post
     end
