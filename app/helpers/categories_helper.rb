@@ -34,7 +34,7 @@ module CategoriesHelper
 
 
   def most_liked_in_category(category)
-    post_array = category.votes.group(:post_id).count(:all).max_by { |key, value| value }
+    post_array ||= category.votes.group(:post_id).count(:all).max_by { |key, value| value }
     if post_array
       post = Post.find(post_array[0])
     elsif post = category.posts.first

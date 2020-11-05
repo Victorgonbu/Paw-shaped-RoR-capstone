@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes([:votes, :paws, :user, :category]).find(params[:id])
   end
 
   private

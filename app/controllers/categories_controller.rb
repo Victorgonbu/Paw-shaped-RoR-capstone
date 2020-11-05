@@ -8,7 +8,6 @@
   end
   def show
     @category = Category.find(params[:id])
-    @posts = Post.where(category_id: params[:id]).order(created_at: :desc)
-    @accomplished = Post.where(goal: 0)
+    @posts = Post.includes([:category, :user]).where(category_id: params[:id]).order(created_at: :desc)
   end
 end
