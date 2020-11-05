@@ -15,6 +15,24 @@ module CategoriesHelper
 
   end
 
+  def render_post_grid(posts, post)
+    if revert(posts.size) < 4
+      render 'post', post: post
+    else
+      render 'inverted_post', post: post
+    end
+  end
+
+  def render_goal_setter(post)
+    render 'goal_setter', post: post if post.goal > 0
+  end
+
+  def render_user_interactions(post)
+    render '/posts/interaction', post: post if current_user
+  end
+
+
+
   def most_liked_in_category(category)
     post_array = category.votes.group(:post_id).count(:all).max_by { |key, value| value }
     if post_array

@@ -6,47 +6,12 @@
   </div>
 
   <ul class="navbar-links">
+    <li><%= link_to 'Home', root_path, class: 'links' %></li>
     <% Category.ordered.each do |category| %>
       <li><%= link_to category.name, category_path(category.id), class: 'links' %></li>
     <% end %>
   </ul>
 
-  <% if current_user %>
-
-
-  <div class="navbar-user">
-
-    <div class="user">
-      <%= link_to 'Create new post', new_post_path, class: 'user-nav-link brown-border' %>
-    </div>
-
-    <div class="user">
-      <a href="#" class="user-nav-link"><%= current_user.name %></a>
-    </div>
-    <div class="user">
-      <span ><%= current_user.paws.size %></span>
-      <span><i class="fas fa-paw coin-paw"></i></span>
-    </div>
-    <div class="user">
-      <%= link_to 'Get Paws', new_user_paw_path(current_user), class: 'brown-border user-nav-link ' %>
-    </div>
-    <div class="user">
-      <%= link_to 'Sign out', session_path(current_user), class: 'user-nav-link', method: :delete %>
-    </div>
-
-  </div>
-
-  <% else %>
-
-  <div class="navbar-user">
-    <div class="user">
-      <%= link_to 'Login', new_session_path, class: 'brown-border user-nav-link' %>
-    </div>
-    <div class="user">
-      <%= link_to 'Register', new_user_path, class: 'user-nav-link' %>
-    </div>
-
-  </div>
-  <% end %>
+  <%= render_user_navbar %>
 
 </nav>

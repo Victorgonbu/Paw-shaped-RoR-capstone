@@ -1,0 +1,21 @@
+<div class="navbar-user">
+
+  <div class="user">
+    <%= link_to 'Create new post', new_post_path, class: 'user-nav-link brown-border' %>
+  </div>
+
+  <div class="user">
+    <a href="#" class="user-nav-link"><%= current_user.name %></a>
+  </div>
+  <div class="user">
+    <span ><%= current_user.paws.size %></span>
+    <span><i class="fas fa-paw coin-paw"></i></span>
+  </div>
+  <div class="user">
+    <%= link_to 'Get Paws', new_user_paw_path(current_user), class: 'brown-border user-nav-link ' %>
+  </div>
+  <div class="user">
+    <%= link_to 'Sign out', session_path(current_user), class: 'user-nav-link', method: :delete %>
+  </div>
+
+</div>

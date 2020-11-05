@@ -1,17 +1,7 @@
-
-
 <ul class="posts">
   <% @posts.each do |post| %>
-
     <li class="post">
-      <% if revert(@posts.size) < 4 %>
-        <%= render 'post-image', post: post %>
-        <%= render 'post-body', post: post %>
-        <% else %>
-        <%= render 'post-body', post: post %>
-        <%= render 'post-image', post: post %>
-      <% end %>
-
+      <%= render_post_grid(@posts, post) %>
     </li>
   <% end %>
 </ul>

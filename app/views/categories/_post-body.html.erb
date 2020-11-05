@@ -15,23 +15,8 @@
     <span class="user-name"><%= post.user.name %></span>
   </div>
   <div class="goal">
-  <% if post.goal > 0 %>
-
-      <div class="set-goal">
-        <div class="">
-          <span>Goal:</span>
-        </div>
-
-          <span><%= post.goal %></span>
-          <span> Paws left</span>
-
-
-      </div>
-
-  <% end %>
-  <% if current_user %>
-  <%= render '/posts/interaction', post: post %>
-  <% end %>
+  <%= render_goal_setter(post) %>
+  <%= render_user_interactions(post) %>
     </div>
 
 
