@@ -24,6 +24,11 @@ module CategoriesHelper
     end
   end
 
+  def render_most_voted_post_in(category)
+    post = most_liked_in_category(category)
+    render 'most_liked_posts', post: post if post
+  end
+
   def paws(post)
 
     link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch) do
@@ -45,4 +50,9 @@ module CategoriesHelper
       end
     end
   end
+
+  def most_voted_post(most_voted)
+    render 'most_voted' if most_voted
+  end
+
 end

@@ -1,0 +1,10 @@
+<% @categories.each do |category| %>
+  <%= link_to category_path(category), class: 'category' do%>
+  <div class="category">
+    <div class="most-liked-in-category category-name">
+      <%= category.name %>
+    </div>
+    <%= render_most_voted_post_in(category) %>
+  </div>
+  <% end %>
+<% end %>

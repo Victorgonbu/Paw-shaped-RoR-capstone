@@ -1,42 +1,7 @@
 <div class="main-grid">
-  <% if @most_voted %>
-  <%= link_to post_path(@most_voted) do %>
-  <div class="first-row">
-    <div class="most-voted-post">
-      <h1 class="most-voted-post-title"><%= @most_voted.title %></h1>
-      <p class="most-voted-post-description"><%= @most_voted.description %></p>
-    </div>
-
-    <%= image_tag(@most_voted.image, class: 'category-img') %>
-
-    <div class="shade">
-
-    </div>
-
-    </div>
-  <% end %>
-  <% end %>
+  <%= most_voted_post(@most_voted) %>
 
   <div class="second-row">
-    <% @categories.each do |category| %>
-      <%= link_to category_path(category), class: 'category' do%>
-      <div class="category">
-        <div class="most-liked-in-category category-name">
-          <%= category.name %>
-        </div>
-        <%  if post = most_liked_in_category(category) %>
-        <div class="most-liked-in-category most-liked-in-category-title">
-            <%= post.title %>
-        </div>
-          <%= image_tag(post.image, class: 'category-img') %>
-          <div class="shade">
-
-          </div>
-
-        <% end %>
-
-      </div>
-      <% end %>
-    <% end %>
+    <%= render 'categories_row' %>
   </div>
 </div>
