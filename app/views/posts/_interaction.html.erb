@@ -6,17 +6,7 @@
   </div>
 
   <div class="paws">
-    <% if post.goal < 1 %>
-      <% if post.paws.any? %>
-      <span class="orage-color"><%= post.paws.size %></span>
-      <span class="orage-color">Paws were donated</span>
-      <span class="orage-color">($<%=post.paws.size * 10%>)</span>
-      <% end %>
-    <% else %>
-        <span><%= post.paws.size %></span>
-        <span><%= paws(post)%></span>
-
-    <% end %>
+    <%= paw_post_status(post) %>
   </div>
 
 

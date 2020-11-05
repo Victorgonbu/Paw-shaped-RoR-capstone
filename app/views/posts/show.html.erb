@@ -8,19 +8,12 @@
     <div class="post-description padding-bottom">
       <%= @post.description %>
     </div>
-    <% if @post.goal > 0 %>
-    <div class="post-goal padding-bottom">
-      <span>Goal: </span>
-      <%= @post.goal %>
-    </div>
-    <% end %>
+    <%= goal_status(@post) %>
     <div class="post-author">
       <div class="author">
         <span>- </span> <%= @post.user.name %>
       </div>
-      <% if current_user %>
-      <%= render '/posts/interaction', post: @post %>
-      <% end %>
+      <%= render_user_interactions(@post) %>
 
     </div>
   </div>
