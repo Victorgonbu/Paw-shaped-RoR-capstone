@@ -18,30 +18,9 @@
       <div class="author">
         <span>- </span> <%= @post.user.name %>
       </div>
-      <div class="votes-paws">
-
-        <div class="votes">
-          <span><%= @post.votes.size %></span>
-          <span><%= votes(@post) %></span>
-        </div>
-
-        <div class="paws">
-          <% if @post.goal < 1 %>
-            <% if @post.paws.any? %>
-            <span class="orage-color"><%= @post.paws.size %></span>
-            <span class="orage-color">Paws were donated</span>
-            <span class="orage-color">($<%=@post.paws.size * 10%>)</span>
-            <% end %>
-          <% else %>
-              <span><%= @post.paws.size %></span>
-              <span><%= paws(@post)%></span>
-
-          <% end %>
-        </div>
-
-
-
-      </div>
+      <% if current_user %>
+      <%= render '/posts/interaction', post: @post %>
+      <% end %>
 
     </div>
   </div>

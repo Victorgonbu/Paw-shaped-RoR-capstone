@@ -14,57 +14,27 @@
     <span>- </span>
     <span class="user-name"><%= post.user.name %></span>
   </div>
-  <% if post.goal && post.goal > 0 %>
   <div class="goal">
-    <div class="set-goal">
-      <div class="">
-        <span>Goal:</span>
-      </div>
+  <% if post.goal > 0 %>
 
-        <span><%= post.goal %></span>
-        <span> Paws left</span>
+      <div class="set-goal">
+        <div class="">
+          <span>Goal:</span>
+        </div>
 
-
-    </div>
-
-    <div class="votes-paws">
-      <div class="paws">
-
-        <span><%= post.paws.size %></span>
-        <span ><%= paws(post) %></span>
-
-      </div>
-      <div class="votes">
-        <span><%= post.votes.size %></span>
-        <span><%= votes(post) %></span>
+          <span><%= post.goal %></span>
+          <span> Paws left</span>
 
 
       </div>
-
-    </div>
-
-  </div>
-
-  <% else %>
-<div class="goal">
-  <div class="votes-paws">
-
-    <% if post.paws.any? %>
-      <p><%= post.paws.size %> Paws were donated</p>
-    <% end %>
-
-    <div class="votes">
-      <span><%= post.votes.size %></span>
-      <span><%= votes(post) %></span>
-
-
-    </div>
-
-  </div>
-</div>
-
 
   <% end %>
+  <% if current_user %>
+  <%= render '/posts/interaction', post: post %>
+  <% end %>
+    </div>
+
+
 
 
 </div>
