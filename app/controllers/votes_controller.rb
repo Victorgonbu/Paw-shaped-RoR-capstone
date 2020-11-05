@@ -18,12 +18,9 @@ class VotesController < ApplicationController
 
   private
 
-    def require_login
-      unless current_user
-        redirect_back(fallback_location: root_path, alert: 'Must be logged in')
-      end
-    end
-
+  def require_login
+    redirect_back(fallback_location: root_path, alert: 'Must be logged in') unless current_user
+  end
 
   def vote_params
     params.permit(:user_id, :post_id)

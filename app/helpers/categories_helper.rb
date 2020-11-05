@@ -1,18 +1,24 @@
 module CategoriesHelper
-  @@i = 0
-  @@counter = 0
-  def revert(size)
-    @@i == 6 ? @@i = 1 : @@i += 1
-    @@counter += 1
-    if size  == @@counter
-      value = @@i
-      @@i = 0
-      @@counter = 0
-      return value
-    else
-      return @@i
-    end
+  def index
+    @index ||= 0
+  end
 
+  def counter
+    @counter ||= 0
+  end
+
+  def revert(size)
+    index == 6 ? @index = 1 : @index += 1
+    counter
+    @counter += 1
+    if size == @counter
+      value = @index
+      @index = 0
+      @counter = 0
+      value
+    else
+      @index
+    end
   end
 
   def render_post_grid(posts, post)
@@ -24,20 +30,18 @@ module CategoriesHelper
   end
 
   def render_goal_setter(post)
-    render 'goal_setter', post: post if post.goal > 0
+    render 'goal_setter', post: post if post.goal.positive?
   end
 
   def render_user_interactions(post)
     render '/posts/interaction', post: post if current_user
   end
 
-
-
   def most_liked_in_category(category)
-    post_array ||= category.votes.group(:post_id).count(:all).max_by { |key, value| value }
+    post_array ||= category.votes.group(:post_id).count(:all).max_by { |_key, value| value }
     if post_array
-      post = Post.find(post_array[0])
-    elsif post = category.posts.first
+      Post.find(post_array[0])
+    elsif (post = category.posts.first)
       post
     end
   end
@@ -48,9 +52,8 @@ module CategoriesHelper
   end
 
   def paws(post)
-
     link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch) do
-      content_tag(:i, '', class: "fas fa-paw paw")
+      content_tag(:i, '', class: 'fas fa-paw paw')
     end
   end
 
@@ -59,12 +62,12 @@ module CategoriesHelper
     if @vote
 
       link_to(post_vote_path(id: @vote.id, post_id: post.id), method: :delete) do
-        content_tag(:i, '', class: "fas fa-star unvote")
+        content_tag(:i, '', class: 'fas fa-star unvote')
       end
 
     else
       link_to(post_votes_path(post_id: post.id, user_id: current_user.id), method: :post) do
-        content_tag(:i, '', class: "fas fa-star vote")
+        content_tag(:i, '', class: 'fas fa-star vote')
       end
     end
   end
@@ -72,5 +75,4 @@ module CategoriesHelper
   def most_voted_post(most_voted)
     render 'most_voted' if most_voted
   end
-
 end

@@ -3,10 +3,10 @@ class PawsController < ApplicationController
   before_action :require_login
   def create
     number = paw_params[:paws].to_i
-    number.times  do
-        Paw.create(user_id: paw_params[:user_id])
+    number.times do
+      Paw.create(user_id: paw_params[:user_id])
     end
-      redirect_back(fallback_location: root_path, notice: "#{paw_params[:paws]} paws purchased")
+    redirect_back(fallback_location: root_path, notice: "#{paw_params[:paws]} paws purchased")
   end
 
   def update
@@ -20,7 +20,7 @@ class PawsController < ApplicationController
         @post.update(category_id: 6)
         redirect_back(fallback_location: root_path, notice: 'Paw gifted, goal achieved!')
       else
-          redirect_back(fallback_location: root_path, notice: 'Paw gifted')
+        redirect_back(fallback_location: root_path, notice: 'Paw gifted')
       end
 
     else
@@ -31,9 +31,7 @@ class PawsController < ApplicationController
   private
 
   def require_login
-    unless current_user
-      redirect_back(fallback_location: root_path, alert: 'Must be logged in')
-    end
+    redirect_back(fallback_location: root_path, alert: 'Must be logged in') unless current_user
   end
 
   def paw_params

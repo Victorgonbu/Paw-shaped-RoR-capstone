@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
   include ApplicationHelper
-  before_action :no_be_logged, only: [:new, :create]
-  def new
-
-  end
+  before_action :no_be_logged, only: %i[new create]
+  def new; end
 
   def create
     user = User.find_by(name: params[:name])
@@ -11,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: 'logged in'
     else
-      flash.now[:alert] = "Invalid name"
+      flash.now[:alert] = 'Invalid name'
       render :new
     end
   end
@@ -23,9 +21,7 @@ class SessionsController < ApplicationController
 
   private
 
-    def no_be_logged
-      if current_user
-        redirect_back(fallback_location: root_path, alert: 'Already logged in')
-      end
-    end
+  def no_be_logged
+    redirect_back(fallback_location: root_path, alert: 'Already logged in') if current_user
+  end
 end

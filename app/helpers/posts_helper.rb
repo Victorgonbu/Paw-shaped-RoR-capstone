@@ -8,6 +8,6 @@ module PostsHelper
   end
 
   def goal_status(post)
-    render '/posts/goal_remaining' if post.goal > 0
+    render '/posts/goal_remaining' if post.goal.positive?
   end
 end

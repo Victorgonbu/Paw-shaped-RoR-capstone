@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -16,14 +17,12 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email)
   end
 
-
-    def no_be_logged
-      if current_user
-        redirect_back(fallback_location: root_path, alert: 'Already logged in')
-      end
-    end
+  def no_be_logged
+    redirect_back(fallback_location: root_path, alert: 'Already logged in') if current_user
+  end
 end
