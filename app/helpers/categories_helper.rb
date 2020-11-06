@@ -52,7 +52,7 @@ module CategoriesHelper
   end
 
   def paws(post)
-    link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch) do
+    link_to(user_paw_path(post_id: post.id, user_id: current_user.id), method: :patch, class: 'paw-button') do
       content_tag(:i, '', class: 'fas fa-paw paw')
     end
   end
