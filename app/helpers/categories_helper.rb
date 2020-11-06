@@ -61,12 +61,12 @@ module CategoriesHelper
     @vote = post.votes.find_by(user_id: current_user.id)
     if @vote
 
-      link_to(post_vote_path(id: @vote.id, post_id: post.id), method: :delete) do
+      link_to(post_vote_path(id: @vote.id, post_id: post.id), class: 'vote-link', method: :delete) do
         content_tag(:i, '', class: 'fas fa-star unvote')
       end
 
     else
-      link_to(post_votes_path(post_id: post.id, user_id: current_user.id), method: :post) do
+      link_to(post_votes_path(post_id: post.id, user_id: current_user.id), class: 'vote-link', method: :post) do
         content_tag(:i, '', class: 'fas fa-star vote')
       end
     end
