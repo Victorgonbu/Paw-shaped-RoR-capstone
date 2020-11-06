@@ -21,6 +21,10 @@ module CategoriesHelper
     end
   end
 
+  def display_categories_row(categories)
+    render 'categories_row' if categories
+  end
+
   def render_post_grid(posts, post)
     if revert(posts.size) < 4
       render 'post', post: post
