@@ -22,7 +22,7 @@ RSpec.describe User do
 
   describe 'Validations' do
     describe 'name' do
-      it 'muts be unique' do
+      it 'must be unique' do
         user
         expect(User.create(name: 'victor', email: 'victor@victormanuel.com')).to_not be_valid
       end
