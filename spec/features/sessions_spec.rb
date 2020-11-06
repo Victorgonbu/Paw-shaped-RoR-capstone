@@ -16,7 +16,6 @@ RSpec.describe 'Sessions features' do
       user
       log_in
       expect(page).to have_content('logged in')
-
     end
   end
 

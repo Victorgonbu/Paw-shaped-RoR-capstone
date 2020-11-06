@@ -11,5 +11,4 @@ RSpec.describe Vote do
       expect(vote.macro).to eq(:belongs_to)
     end
   end
-
 end

@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.ordered
-    if Vote.any?
+    return unless Vote.any?
+
     @most_voted = Vote.most_liked
     @most_voted = Post.find(@most_voted)
-    end
   end
 
   def show

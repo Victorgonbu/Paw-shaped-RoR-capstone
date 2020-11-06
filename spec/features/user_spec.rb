@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe 'User features' do
   let(:sign_up) do
     visit('/')

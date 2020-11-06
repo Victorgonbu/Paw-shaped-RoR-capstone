@@ -42,7 +42,6 @@ RSpec.describe User do
       it 'is valid' do
         expect(user).to be_valid
       end
-
     end
   end
 end

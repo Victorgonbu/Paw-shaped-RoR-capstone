@@ -14,7 +14,7 @@ RSpec.describe Category do
 
   describe '.ordered' do
     it 'order by priority' do
-      expect(Category.ordered.to_sql).to eq(Category.includes([:posts, :votes]).order(priority: :asc).to_sql)
+      expect(Category.ordered.to_sql).to eq(Category.includes(%i[posts votes]).order(priority: :asc).to_sql)
     end
   end
 end

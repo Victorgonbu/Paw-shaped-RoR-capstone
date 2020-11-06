@@ -16,7 +16,7 @@ RSpec.describe 'Category features' do
     click_button('Log in')
   end
   let(:post) do
-     file = fixture_file_upload(Rails.root.join('public', 'download.png'), 'image/png')
+    file = fixture_file_upload(Rails.root.join('public', 'download.png'), 'image/png')
     Post.create(title: 'post title', description: 'post description', goal: 2, image: file, category_id: Category.first.id, user_id: User.first.id)
   end
 

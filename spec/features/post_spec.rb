@@ -12,8 +12,7 @@ RSpec.describe 'Post features' do
   let(:create_post) do
     Category.create(name: 'Help them out', priority: 1)
     file = fixture_file_upload(Rails.root.join('public', 'download.png'), 'image/png')
-      Post.create(title: 'post title', description: 'post description', goal: 2, image: file, category_id: Category.first.id, user_id: User.first.id)
-
+    Post.create(title: 'post title', description: 'post description', goal: 2, image: file, category_id: Category.first.id, user_id: User.first.id)
   end
 
   describe 'New' do
