@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     return unless Category.any?
+
     @categories = Category.ordered
     return unless Vote.any?
 

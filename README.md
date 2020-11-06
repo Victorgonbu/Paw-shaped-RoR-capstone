@@ -1,20 +1,39 @@
-# Private events project
+# Ruby on Rails Capstone project
+
+For this Ruby on Rails capstone project i was requested to build a website based on [lifestyle articles](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version) design idea by Nelson Sakwa on Behance. Follow the given design of the website, but must personalize the content.
 
 ## About the project
 
-This is a private events website where you can create your own account, log in, create events and invite who ever is registered in the website. For this project i practiced and get familiar with Rails Associations and Active Record queries.
+Paw shaped is a website where you can create an account to start receiving help from other users for your animals and giving help to other user's/foundation's animals in need.
+
+In Paw Shape you can create posts where you can ask for monetary help(if needed) for an animal/s, ask for information about an animal and even publish missing animals you found. In the other site, you can also be the user who help others by giving away paws or even collaborate in campaigns.
+
+##features
+- User
+> User can create an account and log into the Website
+
+- Post
+> logged in user can create posts
+
+- Paws (website coin)
+> Logged in user can buy and give paws to posts
+
+- Votes
+> Logged in user can vote posts
 
 ## Restrictions
 
 ### Logged in
-* Only users who are logged in are able to create events.
+* Only users who are logged in are able to create post, buy paws, give paws and vote posts.
 
-### Attendees
-* Only registered users can receive invitations from other users private events.
+## Live demo
+
+[Pawshaped.com](https://protected-sea-26942.herokuapp.com/)
+
 
 ## Getting Started
 
-To get this wonderful Website running in your local machine, just follow the next simple steps:
+To get this Website running in your local machine, just follow the next simple steps:
 
 - First make sure you have Ruby 2.7.0 and Rails 6 installed in your local machine. If you don't have them, don't worry, just follow this awesome How-to guide in [Hackernoon](https://hackernoon.com/installing-ruby-on-rails-6-on-ubuntu-a-how-to-guide-r8b732vn)
 
@@ -46,7 +65,6 @@ To get this wonderful Website running in your local machine, just follow the nex
 
 -> localhost:3000
 
-- Finally Create your own account and all Private events you want. Don't forget to invite your friends!.
 
 ### Automated Test
 * Run the RSpec command to check everything is working properly
@@ -56,6 +74,7 @@ $ rspec
 ```
 ## Built with
 * Ruby
+* Ruby on Rails
 * RSpec
 * Rubocop
 * Capybara
