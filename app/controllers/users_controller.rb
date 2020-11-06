@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: 'Sign up'
+      redirect_to root_path, notice: 'Signed up'
       session[:user_id] = @user.id
     else
-      flash.now[:alert] = 'Invalid user'
+      flash.now[:alert] = 'Unable to create'
       render :new
     end
   end
