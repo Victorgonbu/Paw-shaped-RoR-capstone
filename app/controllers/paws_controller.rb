@@ -17,7 +17,7 @@ class PawsController < ApplicationController
       goal = @post.goal
       @post.update(goal: goal - 1)
       if @post.goal <= 0
-        @post.update(category_id: 6)
+        @post.update(category_id: Category.last.id)
         redirect_back(fallback_location: root_path, notice: 'Paw gifted, goal achieved!')
       else
         redirect_back(fallback_location: root_path, notice: 'Paw gifted')
