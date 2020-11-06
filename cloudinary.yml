@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: microverse-shaqri
+  api_key: '529422562387963'
+  api_secret: vaoWrXDXuTEGHacdv5fwxJgtz4U
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: microverse-shaqri
+  api_key: '529422562387963'
+  api_secret: vaoWrXDXuTEGHacdv5fwxJgtz4U
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: microverse-shaqri
+  api_key: '529422562387963'
+  api_secret: vaoWrXDXuTEGHacdv5fwxJgtz4U
+  enhance_image_tag: true
+  static_file_support: false
