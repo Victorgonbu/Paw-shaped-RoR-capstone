@@ -13,7 +13,7 @@ Paw shaped is a website where you can create an account to start receiving help 
 
 In Paw Shape you can create posts where you can ask for monetary help(if needed) for an animal/s, ask for information about an animal and even publish missing animals you found. In the other site, you can also be the user who help others by giving away paws or even collaborate in campaigns.
 
-##features
+## Features
 - User
 > User can create an account and log into the Website
 
