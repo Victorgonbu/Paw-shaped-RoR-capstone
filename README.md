@@ -2,6 +2,9 @@
 
 For this Ruby on Rails capstone project i was requested to build a website based on [lifestyle articles](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version) design idea by Nelson Sakwa on Behance. Follow the given design of the website, but must personalize the content.
 
+![Website index](/app/assets/images/app_main_screen.png)
+![Website grid](/app/assets/images/app_grid_screen.png)
+
 ## About the project
 
 Paw shaped is a website where you can create an account to start receiving help from other users for your animals and giving help to other user's/foundation's animals in need.
