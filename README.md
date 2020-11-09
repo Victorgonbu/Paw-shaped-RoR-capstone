@@ -49,6 +49,12 @@ To get this Website running in your local machine, just follow the next simple s
   $ bundle install
 ```
 
+- Create the database
+
+```bash
+  $ rails db:create
+```
+
 - Migrate the database
 
 ```bash
