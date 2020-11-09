@@ -35,6 +35,9 @@ In Paw Shape you can create posts where you can ask for monetary help(if needed)
 
 [Pawshaped.com](https://protected-sea-26942.herokuapp.com/)
 
+## Video presentation
+
+[loom.com](https://www.loom.com/share/45f8b9627c554161845d03b2b5cd1944)
 
 ## Getting Started
 
