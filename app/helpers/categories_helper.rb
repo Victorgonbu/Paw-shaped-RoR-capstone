@@ -42,13 +42,15 @@ module CategoriesHelper
   end
 
   def most_liked_in_category(category)
-    post_array ||= category.votes.group(:post_id).count(:all).max_by { |_key, value| value }
-    if post_array
-      Post.find(post_array[0])
+    post ||= category.most_recent
+    if post
+      post
     elsif (post = category.posts.first)
       post
     end
   end
+
+
 
   def render_most_voted_post_in(category)
     post = most_liked_in_category(category)
