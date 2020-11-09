@@ -26,6 +26,14 @@ RSpec.describe User do
         user
         expect(User.create(name: 'victor', email: 'victor@victormanuel.com')).to_not be_valid
       end
+      it "can't be blank" do
+        user.name = ''
+        user.save
+        expect(user).to_not be_valid
+      end
+      it 'is valid' do
+        expect(user).to be_valid
+      end
     end
 
     describe 'email' do

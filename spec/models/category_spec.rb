@@ -6,10 +6,7 @@ RSpec.describe Category do
       category = Category.reflect_on_association(:posts)
       expect(category.macro).to eq(:has_many)
     end
-    it 'has many votes' do
-      category = Category.reflect_on_association(:votes)
-      expect(category.macro).to eq(:has_many)
-    end
+
   end
 
   describe '.ordered' do
