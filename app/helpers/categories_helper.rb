@@ -50,8 +50,6 @@ module CategoriesHelper
     end
   end
 
-
-
   def render_most_voted_post_in(category)
     post = most_liked_in_category(category)
     render 'most_liked_posts', post: post if post
