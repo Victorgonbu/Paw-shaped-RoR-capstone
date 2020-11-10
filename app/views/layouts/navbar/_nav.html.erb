@@ -1,0 +1,17 @@
+<nav class="navbar">
+
+  <div class="brand">
+    <p><%= link_to 'Paw Shaped', root_path, class: 'root-logo' %></p>
+    <i class="fas fa-paw main-logo-img"></i>
+  </div>
+
+  <ul class="navbar-links">
+    <li><%= link_to 'Home', root_path, class: 'links' %></li>
+    <% Category.ordered.each do |category| %>
+      <li><%= link_to category.name, category_path(category.id), class: 'links' %></li>
+    <% end %>
+  </ul>
+
+  <%= render_user_navbar %>
+
+</nav>

@@ -1,0 +1,25 @@
+
+<div class="content">
+  <div class="category">
+      <span class="category-name"><%= post.category.name %></span>
+  </div>
+  <div class="title">
+      <span><%= link_to post.title, post_path(post) %></span>
+  </div>
+
+  <div class="description">
+    <span><%= post.description %></span>
+  </div>
+  <div class="user">
+    <span>- </span>
+    <span class="user-name"><%= post.user.name %></span>
+  </div>
+  <div class="goal">
+  <%= render_goal_setter(post) %>
+  <%= render_user_interactions(post) %>
+    </div>
+
+
+
+
+</div>

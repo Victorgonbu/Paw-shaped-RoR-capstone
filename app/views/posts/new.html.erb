@@ -1,0 +1,47 @@
+<div class="form-wrap white-bg">
+  <h1 class="form-title">Create a new post</h1>
+
+  <%= form_with model: @post, local: true do |p| %>
+    <% if @post.errors %>
+      <div class="errors">
+        <% @post.errors.full_messages.each do |error| %>
+        <p class="error"><%= error %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="field">
+
+      <%= p.text_field :title, placeholder: 'Title', class: 'form-head input' %>
+    </div>
+    <div class="field">
+
+      <%= p.text_area :description, placeholder: 'Description', class: 'form-description input' %>
+    </div>
+    <div class="field field-flex">
+      <div class="sub-field cut-width">
+
+        <%= p.file_field :image, class: 'image', direct_upload: true %>
+      </div>
+      <div class="sub-field">
+        <%= p.label :goal, "Set paws goal" %>
+        <%= p.text_field :goal, class: 'form-goal input-field' %>
+      </div>
+
+      <div class="sub-field">
+        <%= p.label :category_id %>
+        <%= p.select(:category_id, @category_options,{}, class: 'input-field') %>
+      </div>
+      <div class="sub-field submit">
+        <%= p.submit 'Create post', class: 'submit-input' %>
+      </div>
+
+    </div>
+
+
+
+
+
+
+  <% end %>
+
+</div>

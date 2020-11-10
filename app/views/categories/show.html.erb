@@ -1,0 +1,7 @@
+<ul class="posts">
+  <% @posts.each do |post| %>
+    <li class="post">
+      <%= render_post_grid(@posts, post) %>
+    </li>
+  <% end %>
+</ul>

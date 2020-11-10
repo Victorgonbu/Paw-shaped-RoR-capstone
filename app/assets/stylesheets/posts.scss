@@ -1,0 +1,118 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts {
+  min-height: 86%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 7px solid var(--main-brown);
+  align-content: flex-start;
+
+  .post {
+    display: flex;
+    width: calc(100% / 3);
+    height: calc(84.6vh / 3);
+
+    .image {
+      width: 50%;
+    }
+
+    .content {
+      width: 50%;
+      padding: 1em;
+      font-size: 1.3em;
+
+      .category {
+        padding-bottom: 1em;
+
+        .category-name {
+          border-bottom: 1px solid var(--main-color);
+          padding-bottom: 2px;
+          color: var(--main-color);
+        }
+      }
+
+      .title {
+        a {
+          font-weight: 900;
+          color: var(--main-brown);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .description {
+        padding-top: 1em;
+        min-height: 40%;
+        max-height: 50%;
+        font-size: 0.8em;
+        word-wrap: break-word;
+        overflow: hidden;
+      }
+
+      .goal {
+        padding-top: 1em;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8em;
+        white-space: nowrap;
+      }
+
+      .user-name {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.post-show {
+  min-height: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .post-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .post-category {
+    border-bottom: 1px solid var(--main-color);
+    margin: 1em 0;
+    padding: 2px 0;
+    width: auto;
+    font-size: 1.6em;
+  }
+
+  .padding-bottom {
+    padding-bottom: 1em;
+  }
+
+  .post-title {
+    font-size: 1.4em;
+  }
+
+  .post-img {
+    height: 300px;
+  }
+
+  .post-description {
+    font-size: 1.1em;
+    word-wrap: break-word;
+  }
+
+  .post-author {
+    border-bottom: 1px solid var(--main-color);
+    padding: 1em 0;
+
+    .votes-paws {
+      justify-content: flex-end;
+    }
+  }
+}

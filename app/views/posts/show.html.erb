@@ -1,0 +1,22 @@
+<div class="post-show">
+  <div class="post-container">
+    <h1 class="post-category"><%= @post.category.name %></h1>
+
+
+    <%= image_tag(@post.image, class: 'post-img') %>
+    <h2 class="post-title padding-bottom"><%= @post.title %></h2>
+    <div class="post-description padding-bottom">
+      <%= @post.description %>
+    </div>
+    <%= goal_status(@post) %>
+    <div class="post-author">
+      <div class="author">
+        <span>- </span> <%= @post.user.name %>
+      </div>
+      <%= render_user_interactions(@post) %>
+
+    </div>
+  </div>
+
+
+</div>
